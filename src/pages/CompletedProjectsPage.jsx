@@ -1,0 +1,26 @@
+import SignatureCard from '../components/SignatureCard';
+import { completedProjects } from '../data/projects';
+
+export default function CompletedProjectsPage() {
+  return (
+    <div className="animate-fade-in">
+      <div className="bg-[#f9f9f9] py-16 px-5 text-center border-b border-[#eaeaea]">
+        <h2 className="text-center text-3xl md:text-4xl text-navy mb-5 uppercase tracking-[3px] font-serif font-normal">
+          A Legacy of Excellence
+          <span className="block w-[60px] h-[2px] bg-gold mx-auto mt-4" />
+        </h2>
+        <p className="text-[#666] max-w-[600px] mx-auto">
+          Explore our extensive portfolio of over 50 completed masterworks, each a testament to our commitment to structural integrity, timeless design, and unparalleled luxury across Mumbai.
+        </p>
+      </div>
+
+      <div className="py-16 md:py-24 px-5 bg-[#fcfcfc]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {completedProjects.map((project) => (
+            <SignatureCard key={`${project.name}-${project.year}`} project={project} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
