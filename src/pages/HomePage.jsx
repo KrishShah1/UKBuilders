@@ -13,15 +13,6 @@ export default function HomePage() {
     <div className="animate-fade-in">
       <HeroSection />
 
-      <div className="bg-navy text-white py-24 overflow-hidden">
-        <SectionTitle className="!text-white">Client Experiences</SectionTitle>
-        <Carousel interval={5000} visibleCount={3}>
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} testimonial={t} />
-          ))}
-        </Carousel>
-      </div>
-
       <div className="py-24 px-5 max-w-[1200px] mx-auto">
         <SectionTitle>Ongoing Masterpieces</SectionTitle>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -48,6 +39,15 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div className="bg-navy text-white py-24 overflow-hidden">
+        <SectionTitle className="!text-white">Client Experiences</SectionTitle>
+        <Carousel interval={5000} visibleCount={3}>
+          {testimonials.map((t, i) => (
+            <TestimonialCard key={i} testimonial={t} />
+          ))}
+        </Carousel>
       </div>
     </div>
   );
