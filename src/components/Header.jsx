@@ -81,6 +81,15 @@ export default function Header() {
         <span className={`block w-6 h-[2px] bg-gold transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
       </button>
 
+      {/* Click-outside overlay */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={closeMobile}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="absolute top-full left-0 right-0 bg-navy border-t-2 border-gold shadow-[0_8px_16px_rgba(0,0,0,0.4)] md:hidden z-50">

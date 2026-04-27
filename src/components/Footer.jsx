@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-navy-dark text-[#888] text-center py-16 px-5 text-sm">
+    <footer id="contact" className="bg-navy-dark text-text-muted text-center py-16 px-5 text-sm">
       <div className="flex flex-row items-center justify-center gap-4 mb-6 flex-wrap">
         <img
-          src="/images/U.K. Builders Logo (Square) copy.jpg"
+          src="/images/company/logo/U.K. Builders Logo (Square) copy.jpg"
           alt="U.K. Builders Logo"
           className="h-[60px] w-auto mix-blend-screen brightness-110"
         />

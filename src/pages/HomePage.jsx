@@ -22,7 +22,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="py-24 px-5 bg-[#fcfcfc]">
+      <div className="py-24 px-5 bg-surface-subtle">
         <div className="max-w-[1200px] mx-auto">
           <SectionTitle>Legacy Projects</SectionTitle>
           <Carousel interval={10000} visibleCount={3}>
