@@ -7,6 +7,7 @@ import OngoingProjectsPage from './pages/OngoingProjectsPage';
 import CompletedProjectsPage from './pages/CompletedProjectsPage';
 import HistoryPage from './pages/HistoryPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/projects/completed" element={<CompletedProjectsPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>
