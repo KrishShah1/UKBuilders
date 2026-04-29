@@ -8,7 +8,7 @@ export default function Header() {
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
-  const isProjectsActive = location.pathname.startsWith('/projects');
+  const isProjectsActive = location.pathname.startsWith('/projects') || location.pathname === '/timeline';
 
   const navLinkClass = (active) =>
     `text-[13px] tracking-[1px] uppercase no-underline pb-1 transition-all duration-300 border-b-2 leading-none ${
@@ -53,9 +53,15 @@ export default function Header() {
               </Link>
               <Link
                 to="/projects/completed"
-                className="block px-5 py-4 text-[13px] tracking-[1px] uppercase no-underline text-white hover:bg-white/5 hover:text-gold transition-all duration-300"
+                className="block px-5 py-4 text-[13px] tracking-[1px] uppercase no-underline text-white border-b border-white/5 hover:bg-white/5 hover:text-gold transition-all duration-300"
               >
                 Completed Projects
+              </Link>
+              <Link
+                to="/timeline"
+                className="block px-5 py-4 text-[13px] tracking-[1px] uppercase no-underline text-white hover:bg-white/5 hover:text-gold transition-all duration-300"
+              >
+                Project Timeline
               </Link>
             </div>
           )}
@@ -127,6 +133,13 @@ export default function Header() {
                   className="block px-10 py-3 text-[13px] tracking-[1px] uppercase no-underline text-white/80 hover:text-gold transition-all duration-300 border-b border-white/5"
                 >
                   Completed Projects
+                </Link>
+                <Link
+                  to="/timeline"
+                  onClick={closeMobile}
+                  className="block px-10 py-3 text-[13px] tracking-[1px] uppercase no-underline text-white/80 hover:text-gold transition-all duration-300 border-b border-white/5"
+                >
+                  Project Timeline
                 </Link>
               </div>
             )}
