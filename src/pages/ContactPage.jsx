@@ -196,10 +196,21 @@ export default function ContactPage() {
                 <span className="block text-[13px] font-extrabold uppercase tracking-[3px] mb-3 text-gold">
                   Corporate Office
                 </span>
-                <p className="text-text-light leading-[1.8]">
+                <p className="text-text-light leading-[1.8] mb-4">
                   F-34, Sej Plaza, Marve Road,<br />
                   Malad West, Mumbai - 400 064
                 </p>
+                <a
+                  href="https://maps.google.com/?q=F-34+Sej+Plaza+Marve+Road+Malad+West+Mumbai+400064"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[2px] text-gold border border-gold/50 px-4 py-2 hover:bg-gold hover:text-white transition-all duration-300"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  View on Google Maps
+                </a>
               </div>
 
               <div className="bg-navy text-white p-8 border border-gold">

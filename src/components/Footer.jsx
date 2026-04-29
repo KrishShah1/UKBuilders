@@ -1,3 +1,5 @@
+const MAPS_URL = 'https://maps.google.com/?q=F-34+Sej+Plaza+Marve+Road+Malad+West+Mumbai+400064';
+
 // UPDATE these URLs with your actual social media profile links
 const SOCIAL = {
   instagram: 'https://www.instagram.com/ukbuilders',
@@ -44,7 +46,15 @@ export default function Footer() {
       </div>
 
       <p className="my-2">
-        Corporate Office: <span className="text-gold font-bold">F-34, Sej Plaza, Marve Road, Malad West, Mumbai - 400 064</span>
+        Corporate Office:{' '}
+        <a
+          href={MAPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gold font-bold hover:underline"
+        >
+          F-34, Sej Plaza, Marve Road, Malad West, Mumbai - 400 064
+        </a>
       </p>
       <p className="my-2">
         Inquiries: <span className="text-gold font-bold">u.k.builders1981@gmail.com</span> | <span className="text-gold font-bold">+91 98203 11177</span>
