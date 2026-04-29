@@ -9,6 +9,7 @@ import HistoryPage from './pages/HistoryPage';
 import ContactPage from './pages/ContactPage';
 import TimelinePage from './pages/TimelinePage';
 import NotFoundPage from './pages/NotFoundPage';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
