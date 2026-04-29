@@ -5,7 +5,7 @@ export default function HeroSection() {
     <div
       className="py-32 px-5 text-center text-white bg-fixed bg-cover bg-center"
       style={{
-        backgroundImage: `linear-gradient(rgba(11, 29, 58, 0.7), rgba(11, 29, 58, 0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
+        backgroundImage: `linear-gradient(rgba(11, 29, 58, 0.7), rgba(11, 29, 58, 0.7)), url('/images/Building/La Serena.jpg')`,
       }}
     >
       <h2 className="text-[56px] mb-4 font-serif font-normal">Crafting Legacy Residences</h2>

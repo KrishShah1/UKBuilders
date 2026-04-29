@@ -1,6 +1,6 @@
 export default function SignatureCard({ project, className = '' }) {
   return (
-    <div className={`bg-white border border-[#eaeaea] p-6 md:p-10 box-border flex flex-col text-center transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.05)] ${className}`}>
+    <div className={`bg-white border border-border-light p-6 md:p-10 box-border flex flex-col text-center transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.05)] ${className}`}>
       {project.image && (
         <div className="self-center inline-block mb-6 border border-gold-dark p-2 bg-white overflow-hidden">
           <img
@@ -19,7 +19,7 @@ export default function SignatureCard({ project, className = '' }) {
         {project.name}
       </h3>
 
-      <p className="text-justify text-[#555] mt-0 leading-[1.7] grow">
+      <p className="text-justify text-text-secondary mt-0 leading-[1.7] grow">
         {project.description}
       </p>
     </div>
