@@ -18,13 +18,6 @@ const decades = Object.keys(grouped);
 function TimelineCard({ project, align, isOngoing }) {
   return (
     <div className={`bg-white border border-border-light p-5 md:p-6 transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.07)] ${align === 'right' ? 'md:text-right' : 'text-left'}`}>
-      {project.image && (
-        <img
-          src={project.image}
-          alt={project.alt || project.name}
-          className={`h-24 object-contain mb-4 ${align === 'right' ? 'md:ml-auto md:block' : ''}`}
-        />
-      )}
       <h3 className={`gradient-text font-serif text-lg font-black uppercase tracking-[2px] mb-1`}>
         {project.name}
       </h3>
@@ -64,10 +57,10 @@ function DecadeBanner({ label, isOngoing }) {
 
 function Dot({ year, isOngoing }) {
   return (
-    <div className={`w-11 h-11 rounded-full border-2 border-gold flex items-center justify-center flex-shrink-0 z-10 relative ${
+    <div className={`w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center flex-shrink-0 z-10 relative ${
       isOngoing ? 'bg-gold' : 'bg-navy'
     }`}>
-      <span className={`text-[9px] font-bold text-center leading-tight ${isOngoing ? 'text-white' : 'text-gold'}`}>
+      <span className={`text-xs font-bold text-center leading-tight ${isOngoing ? 'text-white' : 'text-gold'}`}>
         {isOngoing ? 'NOW' : year}
       </span>
     </div>
@@ -87,7 +80,7 @@ function TimelineItem({ project, index, isOngoing }) {
       </div>
 
       {/* Desktop: alternating left / right */}
-      <div className="hidden md:grid md:grid-cols-[1fr_56px_1fr] items-start">
+      <div className="hidden md:grid md:grid-cols-[1fr_72px_1fr] items-start">
         <div className="flex justify-end pr-6">
           {isLeft && <TimelineCard project={project} align="right" isOngoing={isOngoing} />}
         </div>
@@ -119,8 +112,8 @@ export default function TimelinePage() {
         <div className="max-w-[1100px] mx-auto relative">
 
           {/* Vertical line — desktop: centred, mobile: left-aligned at dot centre */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gold/20 -translate-x-1/2" />
-          <div className="md:hidden absolute left-[22px] top-0 bottom-0 w-px bg-gold/20" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-gold/40 -translate-x-1/2" />
+          <div className="md:hidden absolute left-[30px] top-0 bottom-0 w-[3px] bg-gold/40" />
 
           {decades.map((decade) => (
             <div key={decade}>
