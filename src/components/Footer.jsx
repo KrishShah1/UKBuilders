@@ -1,8 +1,7 @@
 const MAPS_URL = 'https://maps.google.com/?q=F-34+Sej+Plaza+Marve+Road+Malad+West+Mumbai+400064';
 
-// UPDATE these URLs with your actual social media profile links
 const SOCIAL = {
-  instagram: 'https://www.instagram.com/ukbuilders',
+  instagram: 'https://www.instagram.com/u.k.builders',
   facebook: 'https://www.facebook.com/ukbuilders',
   whatsapp: 'https://wa.me/919820311177',
 };
