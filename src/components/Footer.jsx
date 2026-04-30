@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const MAPS_URL = 'https://maps.google.com/?q=F-34+Sej+Plaza+Marve+Road+Malad+West+Mumbai+400064';
 
 const SOCIAL = {
@@ -88,6 +90,15 @@ export default function Footer() {
         >
           <WhatsAppIcon />
         </a>
+      </div>
+
+      {/* Quick links */}
+      <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 mb-4 text-xs uppercase tracking-[1.5px]">
+        <Link to="/gallery" className="text-text-muted hover:text-gold transition-colors duration-300">Gallery</Link>
+        <Link to="/book-a-call" className="text-text-muted hover:text-gold transition-colors duration-300">Book a Call</Link>
+        <Link to="/timeline" className="text-text-muted hover:text-gold transition-colors duration-300">Timeline</Link>
+        <Link to="/our-story" className="text-text-muted hover:text-gold transition-colors duration-300">Our Legacy</Link>
+        <Link to="/contact" className="text-text-muted hover:text-gold transition-colors duration-300">Contact</Link>
       </div>
 
       <p className="mt-2 text-xs opacity-60">&copy; 2026 U.K. Builders. All rights reserved. RERA Registered.</p>
