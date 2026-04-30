@@ -71,6 +71,10 @@ export default function Header() {
           Company History
         </Link>
 
+        <Link to="/our-story" className={navLinkClass(isActive('/our-story'))}>
+          Our Legacy
+        </Link>
+
         <Link to="/contact" className={navLinkClass(isActive('/contact'))}>
           Contact
         </Link>
@@ -153,6 +157,16 @@ export default function Header() {
             }`}
           >
             Company History
+          </Link>
+
+          <Link
+            to="/our-story"
+            onClick={closeMobile}
+            className={`block px-6 py-4 text-[13px] tracking-[1px] uppercase no-underline border-b border-white/5 transition-all duration-300 ${
+              isActive('/our-story') ? 'text-gold' : 'text-white hover:text-gold hover:bg-white/5'
+            }`}
+          >
+            Our Legacy
           </Link>
 
           <Link
