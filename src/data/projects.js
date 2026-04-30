@@ -20,7 +20,7 @@ export const ongoingProjects = [
     subtitle: 'Premium Residences',
     image: null,
     alt: 'Elvira Building View',
-    configs: 'Exclusive 2, 3, & 4 BHK',
+    configs: 'Exclusive 1 & 2 BHK',
     location: 'Orlem, Malad West',
   },
 ];
