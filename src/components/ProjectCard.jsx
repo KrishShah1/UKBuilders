@@ -20,7 +20,7 @@ export default function ProjectCard({ project }) {
           <img
             src={project.image}
             alt={project.alt}
-            className="block max-w-full h-[300px] md:h-[500px] lg:h-[600px] object-contain transition-transform duration-500 hover:scale-[1.03]"
+            className="block max-w-full object-contain transition-transform duration-500 hover:scale-[1.03]"
           />
         </div>
       )}
