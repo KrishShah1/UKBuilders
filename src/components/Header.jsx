@@ -35,7 +35,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Nav */}
-      <nav className="hidden md:flex gap-8 items-center">
+      <nav className="hidden md:flex gap-6 items-center">
         <Link to="/" className={navLinkClass(isActive('/'))}>Home</Link>
 
         {/* Projects dropdown */}
@@ -68,7 +68,7 @@ export default function Header() {
         >
           <span className={`${navLinkClass(isContactActive)} cursor-pointer`}>Contact</span>
           {contactOpen && (
-            <div className="absolute top-full left-0 mt-[1px] bg-navy min-w-[220px] shadow-[0_8px_16px_rgba(0,0,0,0.4)] border-t-2 border-gold z-50">
+            <div className="absolute top-full right-0 mt-[1px] bg-navy min-w-[220px] shadow-[0_8px_16px_rgba(0,0,0,0.4)] border-t-2 border-gold z-50">
               <Link to="/contact" className={dropdownLinkClass}>Contact Us</Link>
               <Link to="/book-a-call" className="block px-5 py-4 text-[13px] tracking-[1px] uppercase no-underline text-gold hover:bg-white/5 transition-all duration-300">
                 Book a Video Call
