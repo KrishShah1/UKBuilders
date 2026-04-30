@@ -95,6 +95,7 @@ export default function Footer() {
       {/* Quick links */}
       <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 mb-4 text-xs uppercase tracking-[1.5px]">
         <Link to="/gallery" className="text-text-muted hover:text-gold transition-colors duration-300">Gallery</Link>
+        <Link to="/resources" className="text-text-muted hover:text-gold transition-colors duration-300">Knowledge Hub</Link>
         <Link to="/book-a-call" className="text-text-muted hover:text-gold transition-colors duration-300">Book a Call</Link>
         <Link to="/timeline" className="text-text-muted hover:text-gold transition-colors duration-300">Timeline</Link>
         <Link to="/our-story" className="text-text-muted hover:text-gold transition-colors duration-300">Our Legacy</Link>

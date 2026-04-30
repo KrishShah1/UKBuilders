@@ -15,6 +15,7 @@ import UpcomingProjectsPage from './pages/UpcomingProjectsPage';
 
 import VirtualCallPage from './pages/VirtualCallPage';
 import GalleryPage from './pages/GalleryPage';
+import ResourcesPage from './pages/ResourcesPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/timeline" element={<TimelinePage />} />
         <Route path="/book-a-call" element={<VirtualCallPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
