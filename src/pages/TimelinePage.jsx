@@ -1,4 +1,4 @@
-import { completedProjects, ongoingProjects } from '../data/projects';
+import { completedProjects, ongoingProjects, upcomingProjects } from '../data/projects';
 
 const chronological = [...completedProjects].sort((a, b) => a.year - b.year);
 
@@ -131,6 +131,16 @@ export default function TimelinePage() {
 
           <DecadeBanner label="Ongoing" isOngoing />
           {ongoingProjects.map((project, idx) => (
+            <TimelineItem
+              key={project.name}
+              project={project}
+              index={idx}
+              isOngoing
+            />
+          ))}
+
+          <DecadeBanner label="Upcoming" isOngoing />
+          {upcomingProjects.map((project, idx) => (
             <TimelineItem
               key={project.name}
               project={project}

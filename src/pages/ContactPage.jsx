@@ -3,6 +3,7 @@ import { useState } from 'react';
 const PROJECT_OPTIONS = [
   'Justin',
   'Christina',
+  'Elvira',
   'New Life',
   'Madonna',
   'General Inquiry',

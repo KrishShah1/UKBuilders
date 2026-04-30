@@ -8,7 +8,7 @@ export default function Header() {
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
-  const isProjectsActive = location.pathname.startsWith('/projects') || location.pathname === '/timeline';
+  const isProjectsActive = location.pathname.startsWith('/projects') || location.pathname === '/timeline' || location.pathname === '/upcoming';
 
   const navLinkClass = (active) =>
     `text-[13px] tracking-[1px] uppercase no-underline pb-1 transition-all duration-300 border-b-2 leading-none ${
@@ -50,6 +50,12 @@ export default function Header() {
                 className="block px-5 py-4 text-[13px] tracking-[1px] uppercase no-underline text-white border-b border-white/5 hover:bg-white/5 hover:text-gold transition-all duration-300"
               >
                 Ongoing Projects
+              </Link>
+              <Link
+                to="/projects/upcoming"
+                className="block px-5 py-4 text-[13px] tracking-[1px] uppercase no-underline text-white border-b border-white/5 hover:bg-white/5 hover:text-gold transition-all duration-300"
+              >
+                Upcoming Projects
               </Link>
               <Link
                 to="/projects/completed"
@@ -130,6 +136,13 @@ export default function Header() {
                   className="block px-10 py-3 text-[13px] tracking-[1px] uppercase no-underline text-white/80 hover:text-gold transition-all duration-300"
                 >
                   Ongoing Projects
+                </Link>
+                <Link
+                  to="/projects/upcoming"
+                  onClick={closeMobile}
+                  className="block px-10 py-3 text-[13px] tracking-[1px] uppercase no-underline text-white/80 hover:text-gold transition-all duration-300 border-b border-white/5"
+                >
+                  Upcoming Projects
                 </Link>
                 <Link
                   to="/projects/completed"

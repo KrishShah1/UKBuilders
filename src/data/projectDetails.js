@@ -81,6 +81,37 @@ export const projectDetails = {
     ],
   },
 
+  elvira: {
+    name: 'Elvira',
+    slug: 'elvira',
+    subtitle: 'Premium Residences',
+    tagline: 'Another signature address in Orlem — premium living crafted with the hallmark quality of U.K. Builders.',
+    image: null,
+    location: 'Orlem, Malad West',
+    lat: 19.1815,
+    lng: 72.8490,
+    rera: null,
+    configs: '2, 3 & 4 BHK',
+    floors: 14,
+    possession: '2027',
+    amenities: AMENITIES,
+    floorPlans: [
+      { type: '2 BHK', carpet: '655 – 725 sq.ft.', beds: 2, baths: 2 },
+      { type: '3 BHK', carpet: '955 – 1,055 sq.ft.', beds: 3, baths: 3 },
+      { type: '4 BHK', carpet: '1,310 – 1,460 sq.ft.', beds: 4, baths: 4 },
+    ],
+    shops: null,
+    constructionPhotos: [],
+    progress: [
+      { label: 'Foundation & Excavation', date: 'Q2 2024', status: 'done' },
+      { label: 'Plinth Level', date: 'Q4 2024', status: 'done' },
+      { label: 'Structure: 5th Floor', date: 'Q2 2025', status: 'done' },
+      { label: 'RCC Complete', date: 'Q4 2025', status: 'done' },
+      { label: 'Facade & Finishing', date: 'Q2 2026', status: 'active' },
+      { label: 'Possession', date: '2027', status: 'upcoming' },
+    ],
+  },
+
   'new-life': {
     name: 'New Life',
     slug: 'new-life',

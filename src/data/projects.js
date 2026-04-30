@@ -16,6 +16,17 @@ export const ongoingProjects = [
     location: 'Dominic Colony, Orlem, Malad West',
   },
   {
+    name: 'Elvira',
+    subtitle: 'Premium Residences',
+    image: null,
+    alt: 'Elvira Building View',
+    configs: 'Exclusive 2, 3, & 4 BHK',
+    location: 'Orlem, Malad West',
+  },
+];
+
+export const upcomingProjects = [
+  {
     name: 'New Life',
     subtitle: 'Modern Living',
     image: null,
@@ -29,7 +40,7 @@ export const ongoingProjects = [
     image: null,
     alt: 'Madonna Building View',
     configs: 'Exclusive 2, 3, & 4 BHK',
-    location: 'D\'Monte Lane, Orlem, Malad West',
+    location: "D'Monte Lane, Orlem, Malad West",
   },
 ];
 
