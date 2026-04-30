@@ -84,6 +84,13 @@ export default function Header() {
         <Link to="/contact" className={navLinkClass(isActive('/contact'))}>
           Contact
         </Link>
+
+        <Link
+          to="/book-a-call"
+          className="ml-2 text-[12px] tracking-[1.5px] uppercase px-5 py-2 border border-gold text-gold transition-all duration-300 hover:bg-gold hover:text-white leading-none whitespace-nowrap"
+        >
+          Book a Call
+        </Link>
       </nav>
 
       {/* Mobile Hamburger */}
@@ -185,11 +192,19 @@ export default function Header() {
           <Link
             to="/contact"
             onClick={closeMobile}
-            className={`block px-6 py-4 text-[13px] tracking-[1px] uppercase no-underline transition-all duration-300 ${
+            className={`block px-6 py-4 text-[13px] tracking-[1px] uppercase no-underline border-b border-white/5 transition-all duration-300 ${
               isActive('/contact') ? 'text-gold' : 'text-white hover:text-gold hover:bg-white/5'
             }`}
           >
             Contact
+          </Link>
+
+          <Link
+            to="/book-a-call"
+            onClick={closeMobile}
+            className="block px-6 py-4 text-[13px] tracking-[1px] uppercase no-underline text-gold font-bold hover:bg-gold/10 transition-all duration-300"
+          >
+            Book a Call ↗
           </Link>
         </div>
       )}

@@ -13,6 +13,8 @@ import ProjectDetailPage from './pages/ProjectDetailPage';
 import OurStoryPage from './pages/OurStoryPage';
 import UpcomingProjectsPage from './pages/UpcomingProjectsPage';
 
+import VirtualCallPage from './pages/VirtualCallPage';
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -36,6 +38,7 @@ export default function App() {
         <Route path="/our-story" element={<OurStoryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/book-a-call" element={<VirtualCallPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
