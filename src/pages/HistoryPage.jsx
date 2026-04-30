@@ -52,7 +52,7 @@ export default function HistoryPage() {
       <div className="border-t border-border-light py-16 md:py-24 px-5">
         <div className="max-w-[1200px] mx-auto">
           <h3 className="font-serif text-navy text-3xl text-center mb-3 uppercase tracking-[2px] font-normal">
-            The U.K. Group
+            Legacy of Companies
             <span className="block w-[60px] h-[2px] bg-gold mx-auto mt-4" />
           </h3>
           <p className="text-text-tertiary text-center mb-14 max-w-[560px] mx-auto">
