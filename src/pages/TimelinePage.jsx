@@ -57,10 +57,10 @@ function DecadeBanner({ label, isOngoing }) {
 
 function Dot({ year, isOngoing }) {
   return (
-    <div className={`w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center flex-shrink-0 z-10 relative ${
+    <div className={`w-24 h-24 rounded-full border-[3px] border-gold flex items-center justify-center flex-shrink-0 z-10 relative ${
       isOngoing ? 'bg-gold' : 'bg-navy'
     }`}>
-      <span className={`text-xs font-bold text-center leading-tight ${isOngoing ? 'text-white' : 'text-gold'}`}>
+      <span className={`text-sm font-bold text-center leading-tight ${isOngoing ? 'text-white' : 'text-gold'}`}>
         {isOngoing ? 'NOW' : year}
       </span>
     </div>
@@ -80,7 +80,7 @@ function TimelineItem({ project, index, isOngoing }) {
       </div>
 
       {/* Desktop: alternating left / right */}
-      <div className="hidden md:grid md:grid-cols-[1fr_72px_1fr] items-start">
+      <div className="hidden md:grid md:grid-cols-[1fr_100px_1fr] items-start">
         <div className="flex justify-end pr-6">
           {isLeft && <TimelineCard project={project} align="right" isOngoing={isOngoing} />}
         </div>
@@ -113,7 +113,7 @@ export default function TimelinePage() {
 
           {/* Vertical line — desktop: centred, mobile: left-aligned at dot centre */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-gold/40 -translate-x-1/2" />
-          <div className="md:hidden absolute left-[30px] top-0 bottom-0 w-[3px] bg-gold/40" />
+          <div className="md:hidden absolute left-[47px] top-0 bottom-0 w-[3px] bg-gold/40" />
 
           {decades.map((decade) => (
             <div key={decade}>
