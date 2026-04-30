@@ -19,13 +19,13 @@ const GENERATIONS = [
         name: 'Rajeev Shah',
         initials: 'RS',
         title: null,
-        bio: 'Rajeev Shah stepped into the business with a vision to scale his father\'s legacy without ever diluting it. He led the company\'s expansion into larger, more ambitious residential projects and strengthened the group\'s reputation for delivering on time and to specification. Under his leadership, U.K. Builders evolved from a trusted local builder into the premium brand it is today — one synonymous with craftsmanship, reliability, and a deep understanding of what Mumbai families truly need in a home.',
+        bio: 'Kishore Shah\'s son Rajeev stepped into the business with a vision to scale his father\'s legacy without ever diluting it. He led the company\'s expansion into larger, more ambitious residential projects and strengthened the group\'s reputation for delivering on time and to specification. Under his leadership, U.K. Builders evolved from a trusted local builder into the premium brand it is today — one synonymous with craftsmanship, reliability, and a deep understanding of what Mumbai families truly need in a home.',
       },
       {
         name: 'Kiran Shah',
         initials: 'KiS',
         title: null,
-        bio: 'Kiran Shah brought operational rigour and an unwavering eye for detail that elevated the group\'s quality standards across every project. His focus on construction excellence, material selection, and vendor partnerships ensures that every U.K. Builders home reflects the same pride and precision that Kishore Shah instilled from day one. Where others see a finished building, Kiran sees the sum of thousands of decisions made correctly.',
+        bio: 'Kishore Shah\'s daughter Kiran brought operational rigour and an unwavering eye for detail that elevated the group\'s quality standards across every project. Her focus on construction excellence, material selection, and vendor partnerships ensures that every U.K. Builders home reflects the same pride and precision that her father instilled from day one. Where others see a finished building, Kiran sees the sum of thousands of decisions made correctly.',
       },
     ],
   },
@@ -36,7 +36,7 @@ const GENERATIONS = [
         name: 'Avi Shah',
         initials: 'AS',
         title: null,
-        bio: 'Avi Shah represents the future of U.K. Builders — combining the family\'s deep-rooted values with a modern perspective on design, sustainability, and customer experience. His energy and vision are shaping the next chapter of the group, from reimagining how buyers engage with projects to setting new benchmarks in luxury living across Mumbai\'s western suburbs. In Avi, three generations of accumulated wisdom meets the ambition of what U.K. Builders will become.',
+        bio: 'Rajeev Shah\'s son Avi represents the future of U.K. Builders — combining his grandfather\'s founding values with a modern perspective on design, sustainability, and customer experience. His energy and vision are shaping the next chapter of the group, from reimagining how buyers engage with projects to setting new benchmarks in luxury living across Mumbai\'s western suburbs. In Avi, three generations of accumulated wisdom meet the ambition of what U.K. Builders will become.',
       },
     ],
   },
@@ -76,7 +76,7 @@ export default function OurStoryPage() {
       <div className="py-16 md:py-20 px-5">
         <div className="max-w-[780px] mx-auto">
           <p className="text-text-primary text-lg leading-[1.95] text-justify">
-            The story of U.K. Builders is, at its heart, the story of the Shah family — a family that has spent over five decades building not just structures, but communities, trust, and a legacy that grows stronger with every generation. What began in 1969 as one man&apos;s ambition on a quiet lane in Orlem has become a multi-generational mission, with each new member of the family bringing their own strengths to an enterprise built on timeless values. Today, with the third generation now at the helm alongside the second, that mission is more alive than ever.
+            The story of U.K. Builders is, at its heart, the story of the Shah family — a family that has spent over five decades building not just structures, but communities, trust, and a legacy that grows stronger with every generation. What began in 1969 as one man&apos;s ambition on a quiet lane in Orlem has become a true family enterprise — Kishore Shah&apos;s children Rajeev and Kiran carried the torch into a new era, and now Rajeev&apos;s son Avi brings the energy of a third generation. Each has added their own strengths without ever changing what the name stands for.
           </p>
         </div>
       </div>
