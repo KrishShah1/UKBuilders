@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom';
+
 export default function ProjectCard({ project }) {
+  const slug = project.name.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <div className="bg-white border border-border-light p-6 md:p-10 box-border text-center transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.05)]">
       <div className="mb-4">
@@ -30,7 +34,7 @@ export default function ProjectCard({ project }) {
             {project.configs}
           </span>
         </div>
-        <div className="mb-6">
+        <div className="mb-8">
           <span className="block text-navy text-[13px] font-extrabold uppercase tracking-[3px] mb-2 border-b-2 border-gold pb-1 w-fit">
             Location
           </span>
@@ -38,6 +42,21 @@ export default function ProjectCard({ project }) {
             {project.location}
           </span>
         </div>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Link
+          to={`/projects/${slug}`}
+          className="flex-1 bg-gold text-white px-6 py-3 text-sm tracking-[2px] uppercase border border-gold transition-all duration-300 hover:bg-transparent hover:text-gold text-center"
+        >
+          View Details
+        </Link>
+        <Link
+          to={`/projects/${slug}#book-visit`}
+          className="flex-1 bg-transparent text-gold px-6 py-3 text-sm tracking-[2px] uppercase border border-gold transition-all duration-300 hover:bg-gold hover:text-white text-center"
+        >
+          Book a Visit
+        </Link>
       </div>
     </div>
   );

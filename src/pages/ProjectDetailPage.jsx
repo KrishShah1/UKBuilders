@@ -1,0 +1,299 @@
+import { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { projectDetails } from '../data/projectDetails';
+
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 shrink-0" aria-hidden="true">
+      <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function SectionHeading({ children }) {
+  return (
+    <h3 className="font-serif text-navy text-2xl md:text-3xl font-normal uppercase tracking-[2px] mb-2">
+      {children}
+      <span className="block w-[50px] h-[2px] bg-gold mt-3 mb-8" />
+    </h3>
+  );
+}
+
+function ProgressStepper({ steps }) {
+  return (
+    <>
+      {/* Desktop: horizontal */}
+      <div className="hidden md:block relative pt-2 pb-6">
+        <div className="absolute top-[22px] left-0 right-0 h-[2px] bg-border-light" />
+        <div className="flex justify-between">
+          {steps.map((step, i) => {
+            const done = step.status === 'done';
+            const active = step.status === 'active';
+            return (
+              <div key={i} className="flex flex-col items-center flex-1 relative">
+                <div className={`w-8 h-8 rounded-full border-2 z-10 flex items-center justify-center shrink-0 ${
+                  done ? 'bg-gold border-gold' : active ? 'bg-navy border-gold ring-4 ring-gold/25' : 'bg-white border-border-light'
+                }`}>
+                  {done && (
+                    <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" aria-hidden="true">
+                      <path d="M5 13l4 4L19 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                  {active && <div className="w-2.5 h-2.5 rounded-full bg-gold" />}
+                </div>
+                <p className={`mt-2 text-center text-[10px] uppercase tracking-[1px] leading-tight max-w-[80px] ${
+                  active ? 'text-navy font-bold' : done ? 'text-text-secondary' : 'text-text-muted'
+                }`}>{step.label}</p>
+                <p className="text-[10px] text-text-muted mt-0.5">{step.date}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Mobile: vertical */}
+      <div className="md:hidden flex flex-col gap-0">
+        {steps.map((step, i) => {
+          const done = step.status === 'done';
+          const active = step.status === 'active';
+          const isLast = i === steps.length - 1;
+          return (
+            <div key={i} className="flex gap-4 items-start">
+              <div className="flex flex-col items-center">
+                <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                  done ? 'bg-gold border-gold' : active ? 'bg-navy border-gold ring-4 ring-gold/25' : 'bg-white border-border-light'
+                }`}>
+                  {done && (
+                    <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" aria-hidden="true">
+                      <path d="M5 13l4 4L19 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                  {active && <div className="w-2.5 h-2.5 rounded-full bg-gold" />}
+                </div>
+                {!isLast && <div className={`w-[2px] h-8 ${done ? 'bg-gold/40' : 'bg-border-light'}`} />}
+              </div>
+              <div className="pb-6">
+                <p className={`text-sm uppercase tracking-[1px] leading-tight ${active ? 'text-navy font-bold' : done ? 'text-text-secondary' : 'text-text-muted'}`}>
+                  {step.label}
+                </p>
+                <p className="text-xs text-text-muted mt-0.5">{step.date}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+function BookVisitForm({ projectName }) {
+  const [fields, setFields] = useState({ name: '', phone: '', email: '' });
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFields((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errs = {};
+    if (!fields.name.trim()) errs.name = 'Name is required.';
+    if (!fields.phone.trim()) errs.phone = 'Phone is required.';
+    else if (!/^[0-9+\-\s()]{7,15}$/.test(fields.phone)) errs.phone = 'Enter a valid phone number.';
+    if (!fields.email.trim()) errs.email = 'Email is required.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) errs.email = 'Enter a valid email address.';
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    setSubmitted(true);
+  };
+
+  const inputClass = (field) =>
+    `w-full bg-white border px-4 py-3 text-text-primary text-sm focus:outline-none focus:border-gold transition-colors duration-300 ${
+      errors[field] ? 'border-red-400' : 'border-border-light'
+    }`;
+
+  if (submitted) {
+    return (
+      <div className="border border-gold bg-gold/10 p-8 text-center">
+        <span className="block text-gold font-bold text-lg mb-2 uppercase tracking-[2px]">Thank You</span>
+        <p className="text-text-primary leading-[1.8]">
+          Our team will contact you shortly to confirm your visit to {projectName}.
+        </p>
+        <button
+          onClick={() => { setSubmitted(false); setFields({ name: '', phone: '', email: '' }); }}
+          className="mt-6 text-sm uppercase tracking-[2px] text-gold border border-gold px-6 py-2 hover:bg-gold hover:text-white transition-all duration-300"
+        >
+          Submit Another
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+      <div>
+        <label htmlFor="visit-name" className="block text-[11px] uppercase tracking-[2px] text-navy font-bold mb-2">
+          Full Name <span className="text-gold">*</span>
+        </label>
+        <input id="visit-name" name="name" type="text" autoComplete="name" value={fields.name} onChange={handleChange} className={inputClass('name')} placeholder="Your name" />
+        {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+      </div>
+      <div>
+        <label htmlFor="visit-phone" className="block text-[11px] uppercase tracking-[2px] text-navy font-bold mb-2">
+          Phone Number <span className="text-gold">*</span>
+        </label>
+        <input id="visit-phone" name="phone" type="tel" autoComplete="tel" value={fields.phone} onChange={handleChange} className={inputClass('phone')} placeholder="+91 98765 43210" />
+        {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+      </div>
+      <div>
+        <label htmlFor="visit-email" className="block text-[11px] uppercase tracking-[2px] text-navy font-bold mb-2">
+          Email Address <span className="text-gold">*</span>
+        </label>
+        <input id="visit-email" name="email" type="email" autoComplete="email" value={fields.email} onChange={handleChange} className={inputClass('email')} placeholder="you@example.com" />
+        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+      </div>
+      <button type="submit" className="bg-gold text-white px-8 py-4 text-sm tracking-[2px] uppercase border border-gold transition-all duration-300 hover:bg-transparent hover:text-gold">
+        Book My Visit
+      </button>
+    </form>
+  );
+}
+
+export default function ProjectDetailPage() {
+  const { slug } = useParams();
+  const project = projectDetails[slug];
+
+  if (!project) {
+    return (
+      <div className="animate-fade-in py-32 px-5 text-center">
+        <p className="text-text-muted uppercase tracking-[3px] text-sm mb-4">Project Not Found</p>
+        <Link to="/projects/ongoing" className="text-gold border border-gold px-8 py-3 text-sm uppercase tracking-[2px] hover:bg-gold hover:text-white transition-all duration-300">
+          View All Projects
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="animate-fade-in">
+      {/* Hero */}
+      <div className="relative bg-navy overflow-hidden">
+        {project.image ? (
+          <img src={project.image} alt={project.name} className="w-full h-[50vh] md:h-[60vh] object-cover opacity-60" />
+        ) : (
+          <div className="w-full h-[40vh] md:h-[50vh]" />
+        )}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+          <span className="text-gold text-[11px] uppercase tracking-[4px] mb-3">{project.subtitle}</span>
+          <h1 className="font-serif text-white text-5xl md:text-7xl font-black uppercase tracking-[6px] md:tracking-[10px]">
+            {project.name}
+          </h1>
+          <span className="block w-[60px] h-[2px] bg-gold mx-auto mt-5" />
+          <p className="text-text-light max-w-[560px] mt-5 leading-[1.8] text-sm md:text-base">{project.tagline}</p>
+        </div>
+      </div>
+
+      {/* Stats bar */}
+      <div className="bg-navy-dark border-b border-gold/30">
+        <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gold/20">
+          {[
+            { label: 'Configurations', value: project.configs },
+            { label: 'Location', value: project.location },
+            { label: 'Est. Possession', value: project.possession },
+            { label: 'RERA', value: project.rera || 'Registered' },
+          ].map(({ label, value }) => (
+            <div key={label} className="px-6 py-6 text-center">
+              <span className="block text-[10px] uppercase tracking-[2px] text-text-muted mb-1">{label}</span>
+              <span className="block text-white text-sm font-serif">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="py-16 md:py-24 px-5">
+        <div className="max-w-[1100px] mx-auto flex flex-col gap-20">
+
+          {/* Amenities */}
+          <section>
+            <SectionHeading>Amenities</SectionHeading>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {project.amenities.map((amenity) => (
+                <div key={amenity} className="flex items-start gap-2 bg-surface-light border border-border-light px-4 py-3">
+                  <span className="text-gold mt-0.5"><CheckIcon /></span>
+                  <span className="text-text-secondary text-sm leading-snug">{amenity}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Floor Plans */}
+          <section>
+            <SectionHeading>Floor Plans</SectionHeading>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              {project.floorPlans.map((plan) => (
+                <div key={plan.type} className="border border-border-light bg-white p-8 text-center hover:border-gold hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300">
+                  <span className="block gradient-text font-serif text-4xl font-black tracking-[2px] mb-1">{plan.type}</span>
+                  <div className="w-10 h-[2px] bg-gold mx-auto my-4" />
+                  <p className="text-text-tertiary text-xs uppercase tracking-[2px] mb-1">Carpet Area</p>
+                  <p className="text-text-primary text-base font-serif mb-5">{plan.carpet}</p>
+                  <div className="flex justify-center gap-6 text-text-muted text-sm mb-6">
+                    <span>{plan.beds} Bed</span>
+                    <span>{plan.baths} Bath</span>
+                  </div>
+                  <a
+                    href="mailto:u.k.builders1981@gmail.com"
+                    className="inline-block text-[11px] uppercase tracking-[2px] text-gold border border-gold px-5 py-2 hover:bg-gold hover:text-white transition-all duration-300"
+                  >
+                    Request Floor Plan
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Construction Progress */}
+          {project.progress && (
+            <section>
+              <SectionHeading>Construction Progress</SectionHeading>
+              <ProgressStepper steps={project.progress} />
+            </section>
+          )}
+
+          {/* Book a Site Visit */}
+          <section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              <div>
+                <SectionHeading>Book a Site Visit</SectionHeading>
+                <p className="text-text-tertiary leading-[1.8] -mt-4 mb-8 text-sm">
+                  Experience {project.name} in person. Fill in your details and our team will schedule a visit at your convenience.
+                </p>
+                <div className="bg-navy text-white p-8 border border-gold">
+                  <span className="block text-[11px] uppercase tracking-[3px] text-gold mb-4">Get in Touch</span>
+                  <p className="text-text-light text-sm leading-[1.8] mb-2">
+                    <a href="tel:+919820311177" className="hover:text-gold transition-colors duration-300">+91 98203 11177</a>
+                  </p>
+                  <p className="text-text-light text-sm leading-[1.8]">
+                    <a href="mailto:u.k.builders1981@gmail.com" className="hover:text-gold transition-colors duration-300">u.k.builders1981@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+              <div className="bg-surface-light border border-border-light p-8">
+                <BookVisitForm projectName={project.name} />
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      {/* Back link */}
+      <div className="py-8 px-5 border-t border-border-light text-center">
+        <Link to="/projects/ongoing" className="text-[11px] uppercase tracking-[3px] text-gold hover:underline">
+          ← Back to All Projects
+        </Link>
+      </div>
+    </div>
+  );
+}

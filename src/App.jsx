@@ -9,6 +9,8 @@ import HistoryPage from './pages/HistoryPage';
 import ContactPage from './pages/ContactPage';
 import TimelinePage from './pages/TimelinePage';
 import NotFoundPage from './pages/NotFoundPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -26,6 +28,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/ongoing" element={<OngoingProjectsPage />} />
         <Route path="/projects/completed" element={<CompletedProjectsPage />} />
+        <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/timeline" element={<TimelinePage />} />
