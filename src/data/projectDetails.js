@@ -19,6 +19,8 @@ export const projectDetails = {
     tagline: 'Exclusively crafted residences in the heart of Orlem, where every detail speaks of refinement.',
     image: '/images/Building/Justin Night View.jpg',
     location: 'Sunder-Cross Lane, Orlem, Malad West',
+    lat: 19.1808,
+    lng: 72.8484,
     rera: null,
     configs: '2, 3 & 4 BHK',
     floors: 14,
@@ -32,6 +34,7 @@ export const projectDetails = {
     shops: [
       { type: 'Retail Shop', carpet: '250 – 400 sq.ft.' },
     ],
+    constructionPhotos: [],
     progress: [
       { label: 'Foundation & Excavation', date: 'Q1 2023', status: 'done' },
       { label: 'Plinth Level', date: 'Q3 2023', status: 'done' },
@@ -51,6 +54,8 @@ export const projectDetails = {
     tagline: 'Premium living redefined — spacious layouts, curated finishes, and a community built to last.',
     image: '/images/Building/Christina Night View.jpg',
     location: 'Dominic Colony, Orlem, Malad West',
+    lat: 19.1820,
+    lng: 72.8510,
     rera: null,
     configs: '2, 3 & 4 BHK',
     floors: 14,
@@ -64,6 +69,7 @@ export const projectDetails = {
     shops: [
       { type: 'Retail Shop', carpet: '250 – 420 sq.ft.' },
     ],
+    constructionPhotos: [],
     progress: [
       { label: 'Foundation & Excavation', date: 'Q2 2023', status: 'done' },
       { label: 'Plinth Level', date: 'Q4 2023', status: 'done' },
@@ -82,6 +88,8 @@ export const projectDetails = {
     tagline: 'Modern, thoughtfully designed homes in the serene Lourdes Colony — perfect for the discerning family.',
     image: null,
     location: 'Lourdes Colony, Orlem, Malad West',
+    lat: 19.1764,
+    lng: 72.8477,
     rera: null,
     configs: '2 & 3 BHK',
     floors: 12,
@@ -91,6 +99,7 @@ export const projectDetails = {
       { type: '2 BHK', carpet: '620 – 690 sq.ft.', beds: 2, baths: 2 },
       { type: '3 BHK', carpet: '920 – 1,010 sq.ft.', beds: 3, baths: 3 },
     ],
+    constructionPhotos: null,
     progress: null,
   },
 
@@ -101,6 +110,8 @@ export const projectDetails = {
     tagline: 'A statement in luxury living on D\'Monte Lane — bold architecture, timeless interiors, unmatched quality.',
     image: null,
     location: "D'Monte Lane, Orlem, Malad West",
+    lat: 19.1793,
+    lng: 72.8502,
     rera: null,
     configs: '2, 3 & 4 BHK',
     floors: 14,
@@ -111,6 +122,7 @@ export const projectDetails = {
       { type: '3 BHK', carpet: '960 – 1,080 sq.ft.', beds: 3, baths: 3 },
       { type: '4 BHK', carpet: '1,350 – 1,480 sq.ft.', beds: 4, baths: 4 },
     ],
+    constructionPhotos: null,
     progress: null,
   },
 };

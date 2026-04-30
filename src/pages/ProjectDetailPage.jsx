@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { projectDetails } from '../data/projectDetails';
+import Lightbox from '../components/Lightbox';
+
+const ProjectLocationMap = lazy(() => import('../components/ProjectLocationMap'));
 
 function CheckIcon() {
   return (
@@ -164,6 +167,7 @@ function BookVisitForm({ projectName }) {
 export default function ProjectDetailPage() {
   const { slug } = useParams();
   const project = projectDetails[slug];
+  const [lightboxSrc, setLightboxSrc] = useState(null);
 
   if (!project) {
     return (
@@ -276,6 +280,59 @@ export default function ProjectDetailPage() {
             </section>
           )}
 
+          {/* Construction Photos */}
+          {project.constructionPhotos !== null && (
+            <section>
+              <SectionHeading>Site Progress</SectionHeading>
+              {project.constructionPhotos && project.constructionPhotos.length > 0 ? (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {project.constructionPhotos.map((photo, i) => (
+                    <div
+                      key={i}
+                      className="overflow-hidden cursor-zoom-in group relative border border-border-light"
+                      onClick={() => setLightboxSrc({ src: photo.src, alt: photo.caption })}
+                    >
+                      <img src={photo.src} alt={photo.caption} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+                      {photo.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-navy/70 px-3 py-2">
+                          <p className="text-white text-[10px] uppercase tracking-[1px]">{photo.caption}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="border border-dashed border-border-light bg-surface-light p-12 text-center">
+                  <p className="text-text-muted text-sm uppercase tracking-[2px]">Construction photos coming soon</p>
+                  <p className="text-text-muted text-xs mt-2">We&apos;ll be sharing regular site updates as the project progresses.</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* Location Map */}
+          {project.lat && project.lng && (
+            <section>
+              <SectionHeading>Location</SectionHeading>
+              <p className="text-text-tertiary text-sm mb-6 -mt-4">{project.location}</p>
+              <div className="w-full h-[360px] border border-border-light overflow-hidden">
+                <Suspense fallback={<div className="w-full h-full bg-surface-subtle flex items-center justify-center text-text-muted text-sm">Loading map…</div>}>
+                  <ProjectLocationMap name={project.name} lat={project.lat} lng={project.lng} />
+                </Suspense>
+              </div>
+              <p className="text-xs text-text-muted mt-2">
+                <a
+                  href={`https://maps.google.com/?q=${project.lat},${project.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:underline"
+                >
+                  Open in Google Maps ↗
+                </a>
+              </p>
+            </section>
+          )}
+
           {/* Construction Progress */}
           {project.progress && (
             <section>
@@ -317,6 +374,10 @@ export default function ProjectDetailPage() {
           ← Back to All Projects
         </Link>
       </div>
+
+      {lightboxSrc && (
+        <Lightbox src={lightboxSrc.src} alt={lightboxSrc.alt} onClose={() => setLightboxSrc(null)} />
+      )}
     </div>
   );
 }

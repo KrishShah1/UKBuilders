@@ -1,13 +1,21 @@
-export default function SignatureCard({ project, className = '' }) {
+export default function SignatureCard({ project, className = '', onPhotoClick }) {
   return (
     <div className={`bg-white border border-border-light p-6 md:p-10 box-border flex flex-col text-center transition-all duration-400 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.05)] ${className}`}>
       {project.image && (
-        <div className="self-center inline-block mb-6 border border-gold-dark p-2 bg-white overflow-hidden">
+        <div
+          className="self-center inline-block mb-6 border border-gold-dark p-2 bg-white overflow-hidden cursor-zoom-in group relative"
+          onClick={() => onPhotoClick && onPhotoClick(project)}
+        >
           <img
             src={project.image}
             alt={project.alt || project.name}
-            className="block max-w-full h-[250px] object-contain transition-transform duration-500 hover:scale-[1.03]"
+            className="block max-w-full h-[250px] object-contain transition-transform duration-500 group-hover:scale-[1.03]"
           />
+          <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/20 transition-colors duration-300 flex items-center justify-center">
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-navy/80 text-gold text-[10px] uppercase tracking-[2px] px-3 py-1.5">
+              View Photo
+            </span>
+          </div>
         </div>
       )}
 
