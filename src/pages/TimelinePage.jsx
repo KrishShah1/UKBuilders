@@ -60,7 +60,7 @@ function Dot({ year, isOngoing }) {
     <div className={`w-24 h-24 rounded-full border-[3px] border-gold flex items-center justify-center flex-shrink-0 z-10 relative ${
       isOngoing ? 'bg-gold' : 'bg-navy'
     }`}>
-      <span className={`text-sm font-bold text-center leading-tight ${isOngoing ? 'text-white' : 'text-gold'}`}>
+      <span className={`text-base font-bold text-center leading-tight ${isOngoing ? 'text-white' : 'text-gold'}`}>
         {isOngoing ? 'NOW' : year}
       </span>
     </div>
