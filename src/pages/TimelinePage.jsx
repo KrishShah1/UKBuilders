@@ -45,7 +45,7 @@ function DecadeBanner({ label, isOngoing }) {
   return (
     <div className="relative flex items-center my-10 md:my-14 z-10">
       <div className="flex-1 h-px bg-gold/20" />
-      <div className={`mx-4 px-6 py-2 text-xs md:text-sm uppercase tracking-[3px] font-bold font-serif border whitespace-nowrap ${
+      <div className={`mx-4 px-10 py-4 text-base md:text-xl uppercase tracking-[4px] font-bold font-serif border whitespace-nowrap ${
         isOngoing ? 'bg-gold text-white border-gold' : 'bg-navy text-gold border-gold'
       }`}>
         {label}
