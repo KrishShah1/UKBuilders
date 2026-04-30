@@ -40,7 +40,7 @@ export default function Header() {
           onMouseLeave={() => setDropdownOpen(false)}
         >
           <span className={`${navLinkClass(isProjectsActive)} cursor-pointer`}>
-            Projects &#9662;
+            Projects
           </span>
 
           {dropdownOpen && (
@@ -120,7 +120,7 @@ export default function Header() {
                 isProjectsActive ? 'text-gold' : 'text-white hover:text-gold hover:bg-white/5'
               }`}
             >
-              Projects {mobileProjectsOpen ? '▴' : '▾'}
+              Projects
             </button>
             {mobileProjectsOpen && (
               <div className="bg-white/5">
