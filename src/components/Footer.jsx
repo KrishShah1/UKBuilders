@@ -2,7 +2,7 @@ const MAPS_URL = 'https://maps.google.com/?q=F-34+Sej+Plaza+Marve+Road+Malad+Wes
 
 const SOCIAL = {
   instagram: 'https://www.instagram.com/u.k.builders',
-  facebook: 'https://www.facebook.com/ukbuilders',
+  facebook: 'https://www.facebook.com/people/UK-Builders/100089528300390/',
   whatsapp: 'https://wa.me/919820311177',
 };
 
