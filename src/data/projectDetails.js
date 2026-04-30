@@ -29,6 +29,9 @@ export const projectDetails = {
       { type: '3 BHK', carpet: '950 – 1,050 sq.ft.', beds: 3, baths: 3 },
       { type: '4 BHK', carpet: '1,300 – 1,450 sq.ft.', beds: 4, baths: 4 },
     ],
+    shops: [
+      { type: 'Retail Shop', carpet: '250 – 400 sq.ft.' },
+    ],
     progress: [
       { label: 'Foundation & Excavation', date: 'Q1 2023', status: 'done' },
       { label: 'Plinth Level', date: 'Q3 2023', status: 'done' },
@@ -57,6 +60,9 @@ export const projectDetails = {
       { type: '2 BHK', carpet: '660 – 730 sq.ft.', beds: 2, baths: 2 },
       { type: '3 BHK', carpet: '960 – 1,060 sq.ft.', beds: 3, baths: 3 },
       { type: '4 BHK', carpet: '1,320 – 1,470 sq.ft.', beds: 4, baths: 4 },
+    ],
+    shops: [
+      { type: 'Retail Shop', carpet: '250 – 420 sq.ft.' },
     ],
     progress: [
       { label: 'Foundation & Excavation', date: 'Q2 2023', status: 'done' },
