@@ -201,19 +201,34 @@ export default function ProjectDetailPage() {
 
       {/* Stats bar */}
       <div className="bg-navy-dark border-b border-gold/30">
-        <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gold/20">
-          {[
+        {(() => {
+          const stats = project.buildingSpec ? [
+            { label: 'Configurations', value: project.configs },
+            { label: 'Building', value: project.buildingSpec },
+            { label: 'Built Up Area', value: project.builtUpArea },
+            { label: 'Location', value: project.location },
+            { label: 'Est. Possession', value: project.possession },
+            { label: 'RERA', value: project.rera || 'Pending Registration' },
+          ] : [
             { label: 'Configurations', value: project.configs },
             { label: 'Location', value: project.location },
             { label: 'Est. Possession', value: project.possession },
-            { label: 'RERA', value: project.rera || 'Registered' },
-          ].map(({ label, value }) => (
-            <div key={label} className="px-6 py-6 text-center">
-              <span className="block text-[10px] uppercase tracking-[2px] text-text-muted mb-1">{label}</span>
-              <span className="block text-white text-sm font-serif">{value}</span>
+            { label: 'RERA', value: project.rera || 'Pending Registration' },
+          ];
+          const gridClass = stats.length === 6
+            ? 'grid-cols-2 md:grid-cols-3'
+            : 'grid-cols-2 md:grid-cols-4';
+          return (
+            <div className={`max-w-[1100px] mx-auto grid ${gridClass} divide-x divide-gold/20`}>
+              {stats.map(({ label, value }) => (
+                <div key={label} className="px-6 py-6 text-center">
+                  <span className="block text-[10px] uppercase tracking-[2px] text-text-muted mb-1">{label}</span>
+                  <span className="block text-white text-sm font-serif">{value}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          );
+        })()}
       </div>
 
       <div className="py-16 md:py-24 px-5">
