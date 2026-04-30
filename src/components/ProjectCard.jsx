@@ -16,7 +16,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       {project.image && (
-        <div className="inline-block mb-6 border border-gold-dark p-[3px] bg-white overflow-hidden">
+        <div className="inline-block mb-6 border border-gold-dark p-2 bg-white overflow-hidden">
           <img
             src={project.image}
             alt={project.alt}
