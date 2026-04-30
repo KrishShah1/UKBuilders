@@ -8,7 +8,7 @@ const GENERATIONS = [
         name: 'Kishore Shah',
         initials: 'KS',
         title: 'Founder & Chairman',
-        bio: 'Kishore Shah laid the foundation of U.K. Builders in 1972 with a single, unwavering conviction: that every family deserves a home built with integrity. Starting with a modest development in Orlem, he built the company project by project — each one a testament to his belief that quality is never compromised and trust is never traded. Over five decades, his vision has transformed U.K. Builders into one of Malad West\'s most respected names, delivering over 3,000 homes across 50+ projects. The values he set on day one remain the bedrock of everything the group does today.',
+        bio: 'Kishore Shah began construction in 1969 with a single, unwavering conviction: that every family deserves a home built with integrity. Starting with a modest development in Orlem, he built the company project by project — each one a testament to his belief that quality is never compromised and trust is never traded. Over five decades, his vision has transformed U.K. Builders into one of Malad West\'s most respected names, delivering over 3,000 homes across 50+ projects. The values he set on day one remain the bedrock of everything the group does today.',
       },
     ],
   },
@@ -18,13 +18,13 @@ const GENERATIONS = [
       {
         name: 'Rajeev Shah',
         initials: 'RS',
-        title: 'Managing Director',
+        title: null,
         bio: 'Rajeev Shah stepped into the business with a vision to scale his father\'s legacy without ever diluting it. He led the company\'s expansion into larger, more ambitious residential projects and strengthened the group\'s reputation for delivering on time and to specification. Under his leadership, U.K. Builders evolved from a trusted local builder into the premium brand it is today — one synonymous with craftsmanship, reliability, and a deep understanding of what Mumbai families truly need in a home.',
       },
       {
         name: 'Kiran Shah',
         initials: 'KiS',
-        title: 'Director – Operations',
+        title: null,
         bio: 'Kiran Shah brought operational rigour and an unwavering eye for detail that elevated the group\'s quality standards across every project. His focus on construction excellence, material selection, and vendor partnerships ensures that every U.K. Builders home reflects the same pride and precision that Kishore Shah instilled from day one. Where others see a finished building, Kiran sees the sum of thousands of decisions made correctly.',
       },
     ],
@@ -35,7 +35,7 @@ const GENERATIONS = [
       {
         name: 'Avi Shah',
         initials: 'AS',
-        title: 'Director – Business Development',
+        title: null,
         bio: 'Avi Shah represents the future of U.K. Builders — combining the family\'s deep-rooted values with a modern perspective on design, sustainability, and customer experience. His energy and vision are shaping the next chapter of the group, from reimagining how buyers engage with projects to setting new benchmarks in luxury living across Mumbai\'s western suburbs. In Avi, three generations of accumulated wisdom meets the ambition of what U.K. Builders will become.',
       },
     ],
@@ -76,7 +76,7 @@ export default function OurStoryPage() {
       <div className="py-16 md:py-20 px-5">
         <div className="max-w-[780px] mx-auto">
           <p className="text-text-primary text-lg leading-[1.95] text-justify">
-            The story of U.K. Builders is, at its heart, the story of the Shah family — a family that has spent over five decades building not just structures, but communities, trust, and a legacy that grows stronger with every generation. What began as one man&apos;s ambition on a quiet lane in Orlem has become a multi-generational mission, with each new member of the family bringing their own strengths to an enterprise built on timeless values. Today, with the third generation now at the helm alongside the second, that mission is more alive than ever.
+            The story of U.K. Builders is, at its heart, the story of the Shah family — a family that has spent over five decades building not just structures, but communities, trust, and a legacy that grows stronger with every generation. What began in 1969 as one man&apos;s ambition on a quiet lane in Orlem has become a multi-generational mission, with each new member of the family bringing their own strengths to an enterprise built on timeless values. Today, with the third generation now at the helm alongside the second, that mission is more alive than ever.
           </p>
         </div>
       </div>
@@ -106,7 +106,9 @@ export default function OurStoryPage() {
                       <span className="text-gold font-serif text-2xl font-bold tracking-widest">{person.initials}</span>
                     </div>
                     <h3 className="font-serif text-navy text-2xl font-normal mb-1">{person.name}</h3>
-                    <span className="text-gold text-[11px] uppercase tracking-[3px] mb-7 block">{person.title}</span>
+                    {person.title && (
+                      <span className="text-gold text-[11px] uppercase tracking-[3px] mb-7 block">{person.title}</span>
+                    )}
                     <p className="text-text-secondary text-sm leading-[1.9] text-left">{person.bio}</p>
                   </div>
                 ))}
