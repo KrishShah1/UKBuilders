@@ -32,7 +32,7 @@ export const projectDetails = {
       { type: '2 BHK — Type A', carpet: '620 sq.ft.', beds: 2, baths: 2 },
       { type: '2 BHK — Type B', carpet: '678 sq.ft.', beds: 2, baths: 2 },
       { type: '2 BHK — Type C', carpet: '689 sq.ft.', beds: 2, baths: 2 },
-      { type: '3 BHK', carpet: '950 – 1,050 sq.ft.', beds: 3, baths: 3 },
+      { type: '3 BHK', carpet: '843 sq.ft.', beds: 3, baths: 3 },
       { type: '4 BHK', carpet: '1,300 – 1,450 sq.ft.', beds: 4, baths: 4 },
     ],
     shops: [
