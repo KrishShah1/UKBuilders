@@ -13,7 +13,7 @@ export const ongoingProjects = [
     image: '/images/Building/Christina Night View.jpg',
     alt: 'Christina Building Night View',
     configs: 'Exclusive 2, 3, & 4 BHK',
-    location: 'Dominic Lane No. 3, Orlem, Malad West',
+    location: 'Dominic Colony, Orlem, Malad West',
   },
   {
     name: 'Elvira',

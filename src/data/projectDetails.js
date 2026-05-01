@@ -57,7 +57,7 @@ export const projectDetails = {
     subtitle: 'Premium Residences',
     tagline: 'Premium living redefined — spacious layouts, curated finishes, and a community built to last.',
     image: '/images/Building/Christina Night View.jpg',
-    location: 'C.T.S. No. 50, Dominic Lane No. 3, Orlem, Malad West',
+    location: 'C.T.S. No. 50, Dominic Colony, Orlem, Malad West',
     lat: 19.1820,
     lng: 72.8510,
     rera: null,
