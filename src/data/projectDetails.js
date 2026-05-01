@@ -36,7 +36,7 @@ export const projectDetails = {
       { type: '4 BHK', carpet: '1,367 sq.ft.', beds: 4, baths: 4 },
     ],
     shops: [
-      { type: 'Retail Shop', carpet: '250 – 400 sq.ft.' },
+      { type: 'Retail Shop', carpet: '430 sq.ft.' },
     ],
     constructionPhotos: [],
     progress: [
